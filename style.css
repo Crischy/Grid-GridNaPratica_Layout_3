@@ -1,0 +1,106 @@
+/* Layout 3 */
+
+body {
+    background-color: antiquewhite;
+}
+
+/* Grid Areas */
+.article-title {
+    background-color: darkturquoise;
+    grid-area: title;
+}
+
+.article-meta {
+    background-color: lightgray;
+    grid-area: meta;
+}
+
+.article-copy1 {
+    background-color: royalblue;
+    grid-area: copy1;
+}
+
+.article-copy2 {
+    background-color: rosybrown;
+    grid-area: copy2;
+}
+
+.article-media {
+    background-color: khaki;
+    grid-area: media;
+}
+
+.article-aside {
+    background-color: coral;
+    grid-area: aside;
+}
+
+/* Mobile */
+.article {
+    
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+        "title  title   title   title   title   title"
+        "meta   meta    meta    meta    meta    meta"
+        "copy1  copy1   copy1   copy1   copy1   copy1"
+        "copy2  copy2   copy2   copy2   copy2   copy2"
+        "media  media   media   media   media   media"
+        "aside  aside   aside   aside   aside   aside"
+    ;
+    
+    margin: 0 auto;
+    max-width: 1024px;
+
+}
+
+.article > * {
+    min-height: 100px;
+    padding: 1rem;
+}
+
+/* Tablet */
+@media screen and (min-width: 480px) {
+    
+    .article {
+        grid-template-areas: 
+            "meta   meta    title   title   title   title"
+            "copy1  copy1   copy1   copy1   copy1   copy1"
+            "copy2  copy2   copy2   copy2   copy2   copy2"
+            "media  media   media   media   media   aside"
+        ;
+    }
+
+}
+
+/* Desktop */
+@media screen and (min-width: 960px) {
+    
+    .article {
+        grid-template-areas: 
+            "meta   title   title   title   copy2   copy2"
+            "copy1  copy1   copy1   copy1   copy2   copy2"
+            "media  media   media   media   media   media"
+            "aside  aside   .       .       .       ."
+        ;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
